@@ -52,13 +52,11 @@ cat file.txt (от англ. concatenate and print, «объединить и р
 
 ## Цикл жизни файла в Git 
 
-Файл только что создали. Git ещё не отслеживает содержимое этого файла. Состояние: untracked.
-Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked).
-Возможно, изменили файл ещё раз. Состояния: staged, modified (+ tracked).
-Обратите внимание: staged и modified у одного файла, но у разных его версий.
-Ещё раз выполнили git add. Состояние: staged (+ tracked).
-Сделали коммит с помощью git commit. Состояние: tracked.
-Изменили файл. Состояние: modified (+ tracked).
-Снова добавили в staging area с помощью git add. Состояния: staged (+ tracked).
-Сделали коммит. Состояния: tracked.
-Повторили пункты 4 − 7 4−7 много-много раз.
+```mermaid
+  graph TD;
+      Файл только что создали. Git ещё не отслеживает содержимое этого файла. Состояние: untracked -->Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked);
+      Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked)-->Возможно, изменили файл ещё раз. Состояния: staged, modified (+ tracked).;
+      Возможно, изменили файл ещё раз. Состояния: staged, modified (+ tracked). --> Сделали коммит с помощью git commit. Состояние: tracked.
+      Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked)-->Сделали коммит с помощью git commit. Состояние: tracked.;
+      C-->D;
+```
