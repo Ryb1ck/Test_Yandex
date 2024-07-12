@@ -54,9 +54,9 @@ cat file.txt (от англ. concatenate and print, «объединить и р
 
 ```mermaid
   graph TD
-      A[Файл только что создали. Git ещё не отслеживает содержимое этого файла. Состояние: untracked] --> B[Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked)];
-      B[Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked)]-->C[Возможно, изменили файл ещё раз. Состояния: staged, modified (+ tracked).];
-      C[Возможно, изменили файл ещё раз. Состояния: staged, modified (+ tracked).] --> D[Сделали коммит с помощью git commit. Состояние: tracked.]
-      B[Файл добавили в staging area с помощью git add. Состояние: staged (+ tracked)]-->D[Сделали коммит с помощью git commit. Состояние: tracked.];
+      A[Файл только что создали. Git ещё не отслеживает содержимое этого файла. Состояние: untracked] --> B[Файл добавили в staging area с помощью git add. Состояние: staged + tracked];
+      B[Файл добавили в staging area с помощью git add. Состояние: staged + tracked]-->C[Возможно, изменили файл ещё раз. Состояния: staged, modified + tracked.];
+      C--> D[Сделали коммит с помощью git commit. Состояние: tracked.];
+      B-->D;
 
 ```
